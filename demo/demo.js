@@ -20114,7 +20114,9 @@
 	                defaultValue: _this.props.value,
 	                onInput: _this.textChanged,
 	                onBlur: _this.elementBlur,
-	                ref: 'input',
+	                ref: function ref(input) {
+	                    _this.input = input;
+	                },
 	                onKeyDown: _this.keyDown
 	            }, _this.props.editProps));
 	        };
@@ -20220,7 +20222,9 @@
 	                defaultValue: _this.props.value,
 	                onInput: _this.textChanged,
 	                onBlur: _this.finishEditing,
-	                ref: 'input',
+	                ref: function ref(input) {
+	                    _this.input = input;
+	                },
 	                onKeyDown: _this.keyDown
 	            }, _this.props.editProps));
 	        }, _this.renderNormalComponent = function () {
@@ -20345,7 +20349,9 @@
 	                defaultValue: _this.props.value,
 	                onInput: _this.textChanged,
 	                onBlur: _this.elementBlur,
-	                ref: 'input',
+	                ref: function ref(input) {
+	                    _this.input = input;
+	                },
 	                onKeyDown: _this.keyDown
 	            }, _this.props.editProps));
 	        };
@@ -20496,7 +20502,7 @@
 	        };
 
 	        _this2.componentDidUpdate = function (prevProps, prevState) {
-	            var inputElem = _reactDom2.default.findDOMNode(_this2.refs.input);
+	            var inputElem = _reactDom2.default.findDOMNode(_this2.input);
 	            if (_this2.state.editing) {
 	                inputElem.focus();
 	            }
@@ -20529,7 +20535,9 @@
 	                    onBlur: _this2.cancelEditingDelayed,
 	                    onKeyDown: _this2.keyDown,
 	                    placeholder: _this2.props.placeholder || "New tag",
-	                    ref: 'input' })
+	                    ref: function ref(input) {
+	                        _this2.input = input;
+	                    } })
 	            );
 	        };
 
@@ -20628,7 +20636,9 @@
 	                    className: _this.makeClassString(),
 	                    onChange: _this.finishEditing,
 	                    onBlur: _this.cancelEditing,
-	                    ref: 'input',
+	                    ref: function ref(input) {
+	                        _this.input = input;
+	                    },
 	                    onKeyDown: _this.keyDown
 	                }, _this.props.editProps),
 	                optionNodes
