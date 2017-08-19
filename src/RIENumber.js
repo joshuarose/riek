@@ -56,7 +56,7 @@ export default class RIENumber extends RIEStatefulBase {
                       defaultValue={this.props.value}
                       onInput={this.textChanged}
                       onBlur={this.elementBlur}
-                      ref="input"
+                      ref={(input) => { this.input = input; }} 
                       onKeyDown={this.keyDown}
                       {...this.props.editProps} />;
     };

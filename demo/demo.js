@@ -20057,7 +20057,7 @@
 	        _this.finishEditing = function () {
 	            debug('finishEditing');
 	            _this.props.beforeFinish ? _this.props.beforeFinish() : null;
-	            var newValue = _reactDom2.default.findDOMNode(_this.refs.input).value;
+	            var newValue = _reactDom2.default.findDOMNode(_this.input).value;
 	            var result = _this.doValidations(newValue);
 	            if (result && _this.props.value !== newValue) {
 	                _this.commit(newValue);
@@ -20094,7 +20094,7 @@
 
 	        _this.componentDidUpdate = function (prevProps, prevState) {
 	            debug('componentDidUpdate(' + prevProps + ', ' + prevState + ')');
-	            var inputElem = _reactDom2.default.findDOMNode(_this.refs.input);
+	            var inputElem = _reactDom2.default.findDOMNode(_this.input);
 	            debug(inputElem);
 	            if (_this.state.editing && !prevState.editing) {
 	                debug('entering edit mode');
@@ -20605,7 +20605,7 @@
 	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = RIESelect.__proto__ || Object.getPrototypeOf(RIESelect)).call.apply(_ref, [this].concat(args))), _this), _this.finishEditing = function () {
 	            // get the object from options that matches user selected value
 	            var newValue = _this.props.options.find(function (option) {
-	                return option.id === _reactDom2.default.findDOMNode(this.refs.input).value;
+	                return option.id === _reactDom2.default.findDOMNode(this.input).value;
 	            }, _this);
 	            _this.doValidations(newValue);
 	            if (!_this.state.invalid && _this.props.value !== newValue) {
